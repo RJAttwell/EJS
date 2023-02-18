@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <!-- We can use a scriplet tag in order to use control-flow (if statements, else statements, etc.) -->
+    <% if (kindOfDay === "Saturday" || kindOfDay === "Sunday"){ %>
+        <!-- Put a marker to outputs the value into the template -->
+        <h1 style="color: rgb(216, 3, 3);">It's <%=kindOfDay%> ToDo List</h1>
+    <% }else{ %>
+        <h1 style="color: rgb(0, 100, 22);">It's <%=kindOfDay%> ToDo List</h1>
+    <%}%>
+
+    <!-- Scriptlet tag works on a line by line basis so must be on every line of JavaScript -->
+    <!-- Try to keep logic inside JavaScript files and keep content inside HTML/EJS files -->
+</body>
+</html>
+
