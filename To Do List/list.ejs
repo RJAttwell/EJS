@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,32 @@
 </head>
 
 <body>
-   
-    <h1><%= kindOfDay %></h1>
-   
+
+    <h1>
+        <%= kindOfDay %>
+    </h1>
+
     <ul>
-        <li>Buy Food</li>
-        <li>Cook Food</li>
-        <li>Eat Food</li>
+        <% for(var i=0; i < newListItems.length; i++ ) {%>
+            <li>
+                <%= newListItems[i] %>
+            </li>
+            <%}%>
     </ul>
-    
+
     <br>
 
-    <form action="/" method="post">
-        <label for="nextItem">What next?</label>
-        <input type="text" id="nextItem">
-        <button type="submit">Add To Your List!</button>
+    <!-- Action has to be the root/home route  -->
+    <!-- Information will be posted to the server via the method of post-->
+
+    <form class="" action="/" method="post">
+        <label for="newItem">What next?</label>
+
+        <input type="text" name="newItem">
+
+        <button type="submit" name="button">Add To Your List!</button>
     </form>
 
 </body>
-</html>
 
+</html>
