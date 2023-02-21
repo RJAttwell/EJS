@@ -8,7 +8,7 @@ const app = express();
 
 //Must create the variable up here and leave it empty otherwise it'll only be created when we make a post request
 //Must be an array in order to add multiple items to the list
-var items = [];
+let items = [];
 
 //Must set the app in order to use EJS
 //Must have it exactly how it is below and in the position it is in in the code.
@@ -19,16 +19,16 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function (req, res) {
 
-    var today = new Date(); //creates a date object with the current date and time
+    let today = new Date(); //creates a date object with the current date and time
 
-    var options = {
+    let options = {
         weekday: 'long',    //Long means the entire day gets printed
         day: "numeric",
         month: "long"
     };
 
     //Parse in options to format the date string
-    var day = today.toLocaleDateString("en-US", options); //Locale is region
+    let day = today.toLocaleDateString("en-US", options); //Locale is region
 
     //Instead of res.sendFile, we shall use res.render
     //This will render a file called "list" and parse into the file the variable 'kindOfDay' and we give the value 'day' for the variable  
@@ -36,7 +36,7 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-    var item = req.body.newItem;
+    let item = req.body.newItem;
 
     //Append the item to our new array 
     items.push(item);
