@@ -16,6 +16,8 @@ app.set('view engine', 'ejs');
 
 //Must be used in order to use bodyParser which allows use to request the value of a variable 
 app.use(bodyParser.urlencoded({extended: true}));
+//Public is where we store our static files. The command below tells the server to use them.
+app.use(express.static("public"));
 
 app.get("/", function (req, res) {
 
